@@ -7,7 +7,7 @@ VALUES ('Roland', 'Valdez', 'rv', 'roland@codeup.com','roland'),
        ('John', 'Pierce', 'jp', 'john@codeup.com','john'),
        ('Kenyon', 'Luce', 'kl', 'kenyon@codeup.com','kenyon');
 
-INSERT INTO posts(user_id, title, description, categories, quantity, price)
+INSERT INTO ads(user_id, title, description, categories, quantity, price)
 VALUES (1, 'Selling TV', 'New TV in box', 'electronics',1, 100),
        (2, 'Selling Computer', 'New Macbook Pro', 'electronics',1, 500),
        (3, 'Selling Washing Machine', 'Used Maytag 2019 model', 'appliance', 1, 800),
