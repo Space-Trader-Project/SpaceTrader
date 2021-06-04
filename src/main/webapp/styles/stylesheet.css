@@ -1,0 +1,15 @@
+
+.navbar{
+
+    font-size: 12px !important;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600 !important;
+}
+
+.postingBody {
+    margin-top: 15%; !important;
+    /*border: 5px solid #FFFF00;*/
+    display: flex;  !important;
+    justify-content: center; !important;
+}
+
