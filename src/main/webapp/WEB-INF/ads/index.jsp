@@ -3,20 +3,19 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
-<%--    <script>--%>
-<%--        $("#ads").click(function(){--%>
-<%--            $(this).html("hello")--%>
-<%--        })--%>
-<%--        var searchBar = $("#search");--%>
-<%--        var submitButton = $("#submit");--%>
-<%--    </script>--%>
+    <%--    <script>--%>
+    <%--        $("#ads").click(function(){--%>
+    <%--            $(this).html("hello")--%>
+    <%--        })--%>
+    <%--        var searchBar = $("#search");--%>
+    <%--        var submitButton = $("#submit");--%>
+    <%--    </script>--%>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<form action=""></form>
-<label for="search" >Search Ads</label>
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<label for="search">Search Ads</label>
 <input id="search" type="text" placeholder="Search">
 <input id="submit" type="submit">
 <h1>Here Are all the ads!</h1>
