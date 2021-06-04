@@ -26,6 +26,14 @@
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
             </div>
+            <div class="form-group">
+                <label for="First_Name">First Name</label>
+                <input id="First_Name" name="First_Name" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label for="Last_Name">Last Name</label>
+                <input id="Last_Name" name="Last_Name" class="form-control" type="text">
+            </div>
             <input type="submit" class="btn btn-primary btn-block">
         </form>
     </div>
