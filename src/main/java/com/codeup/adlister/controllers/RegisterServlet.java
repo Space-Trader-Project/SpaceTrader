@@ -23,14 +23,19 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        String firstName = request.getParameter("First_name");
+        String lastName = request.getParameter("Last_name");
+
         String hash = Password.hash(password);
-//        String hash = BCrypt.hashpw(password, BCrypt.gensalt());
+
 
         // validate input
         boolean inputHasErrors = username.isEmpty()
-            || email.isEmpty()
-            || password.isEmpty()
-            || (! password.equals(passwordConfirmation));
+                || email.isEmpty()
+                || password.isEmpty()
+                || (!password.equals(passwordConfirmation))
+                || firstName.isEmpty()
+                || lastName.isEmpty();
 
         if (inputHasErrors) {
             response.sendRedirect("/register");
