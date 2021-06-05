@@ -15,9 +15,13 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<label for="search">Search Ads</label>
-<input id="search" type="text" placeholder="Search">
-<input id="submit" type="submit">
+
+<form action="/ads" method="POST">
+    <label for="search">Search Ads</label>
+    <input id="search" type="text" placeholder="Search" name="searchValue">
+    <input id="submit" type="submit">
+</form>
+
 <h1>Here Are all the ads!</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
