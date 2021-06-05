@@ -2,13 +2,13 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Please Log In" />
+        <jsp:param name="title" value="Login" />
     </jsp:include>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
-        <h1>Please Log In</h1>
+        <h1>You are going to Space!!!</h1>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
