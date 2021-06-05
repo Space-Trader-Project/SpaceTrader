@@ -1,3 +1,4 @@
+# DROP DATABASE spacetrader_db;
 CREATE DATABASE IF NOT EXISTS spacetrader_db;
 USE spacetrader_db;
 
@@ -18,6 +19,7 @@ CREATE TABLE IF NOT EXISTS ads (
      title VARCHAR(250) NOT NULL,
      description TEXT,
      categories VARCHAR(250),
+     picture VARCHAR (250),
      quantity INT UNSIGNED,
      price DOUBLE,
      PRIMARY KEY (id),
