@@ -1,11 +1,13 @@
 use spacetrader_db;
 
 INSERT INTO users(first_name, last_name, user_name, email, password)
-VALUES ('Roland', 'Valdez', 'rv', 'roland@codeup.com','$2a$12$3hRsZyGzE7JbqhYDOaYYCeIBy/t0VdaSdcgf5SHZBDB7kDYk1MFxq'),
-       ('Timothy', 'Lefkowitz', 'tl', 'tim@codeup.com','$2y$12$rVLRBD//eoMd73zhHVm3R.PsEPk3E7rnf.3k/xu3vOtctbTlCrIny'),
-       ('Salim', 'Ahmedabadi', 'sa', 'salim@codeup.com','$2y$12$xersYb4YAU9tjbeG.LzanOMVsse5Dxv5E4Nr6UqqUM3Wu2Pw8k9CG'),
-       ('John', 'Pierce', 'jp', 'john@codeup.com','$2y$12$jJ9XbfbQ8wj/sr0Y/..MN.RnTSsube/9NJCQ0hFOb/k9uw84NIhPe'),
-       ('Kenyon', 'Luce', 'kl', 'kenyon@codeup.com','$2y$12$HlsX/nf3OidKQXbWZxTVTuqxpdU4hsw4Df5xUdD2NNVxJbSlmcRSC');
+
+VALUES ('Roland', 'Valdez', 'rv', 'roland@codeup.com','roland'),
+       ('Timothy', 'Lefkowitz', 'tl', 'tim@codeup.com','tim'),
+       ('Salim', 'Ahmedabadi', 'sa', 'salim@codeup.com','salim'),
+       ('John', 'Pierce', 'jp', 'john@codeup.com','john'),
+       ('Kenyon', 'Luce', 'kl', 'kenyon@codeup.com','kenyon');
+
 
 INSERT INTO ads(user_id, title, description, categories, picture, quantity, price)
 VALUES (1, 'Millennium Falcon (YT-1300 light freighter)', 'Do you need to make the Kessel Run in less than twelve parsecs then this is the ship for you.The YT-1300 Corellian light freighter, manufactured by the Corellian Engineering Corporation, was essentially a giant "forklift" designed to tug around giant container ships. As one of the most successful designs in history, the appeal of the vessel is not its basic equipment, but its modular ability to take an extraordinary amount of modifications and alterations.', 'Spacecraft','http://img.lum.dolimg.com/v1/images/Millennium-Falcon_018ea796.jpeg?region=0%2C1%2C1536%2C864',1, 49999.99),
@@ -23,6 +25,7 @@ VALUES (1, 'Millennium Falcon (YT-1300 light freighter)', 'Do you need to make t
        (5, 'Mjolnir', 'Mjolnir was crafted from a nugget of Uru, a powerful nigh-invulnerable Asgardian metal. Additional enchantments placed upon it by Odin made it virtually indestructible. It has survived heat as extreme as the heart of suns and blasts powerful enough to destroy planets. Almost nothing is capable of withstanding a blow from Mjolnir, not even the armor of the powerful Celestials. A rare exception is primary adamantium.', 'Enchanted Weapon','https://static.wikia.nocookie.net/marveldatabase/images/1/16/Thor%27s_Hammer.jpg/revision/latest/scale-to-width-down/1000?cb=20120108032125', 1, 5000000),
        (5, 'Destroyer', 'The Destroyer armor possesses numerous capabilities which are only active if the armor is inhabited or remote piloted by the spirit of a sentient being. While some of the powers might vary, depending upon the spirit inhabiting the armor, they are primarily the same for any user.', 'Enchanted Armor','https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Destroyer_%28Enchanted_Armor%29_from_Thor_%28film%29_0002.jpg/revision/latest/scale-to-width-down/403?cb=20110704092309', 1, 300000),
        (5, 'Space Helmet', 'A helmet capable of retracting down into a removable earpiece. The helmet allows for users to survive in the vacuum of space providing both an oxygen supply and pressure support. The helmet also provides various detailed visual displays.', 'Helmet','https://static.wikia.nocookie.net/marvelcinematicuniverse/images/b/bf/4558286b-9a2b-46dc-af1f-acd35c854b97.jpg/revision/latest/scale-to-width-down/720?cb=20180505135749', 1, 5000);
+
 
 INSERT INTO user_type(user_id, user_type)
 VALUES (1, 'admin'),

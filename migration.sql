@@ -1,4 +1,4 @@
-# DROP DATABASE spacetrader_db;
+
 CREATE DATABASE IF NOT EXISTS spacetrader_db;
 USE spacetrader_db;
 

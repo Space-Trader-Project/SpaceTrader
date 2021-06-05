@@ -23,8 +23,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
-        String firstName = request.getParameter("First_name");
-        String lastName = request.getParameter("Last_name");
+        String firstName = request.getParameter("First_Name");
+        String lastName = request.getParameter("Last_Name");
 
         String hash = Password.hash(password);
 
@@ -43,8 +43,9 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // create and save a new user
-        User user = new User(username, email, hash);
+        User user = new User(username, email, hash, firstName, lastName );
         DaoFactory.getUsersDao().insert(user);
+
         response.sendRedirect("/login");
     }
 }
