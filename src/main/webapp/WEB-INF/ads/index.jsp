@@ -28,7 +28,7 @@
 
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<%--<jsp:include page="/WEB-INF/partials/navbar.jsp"/>--%>
 
 <form action="/ads" method="POST">
     <label for="search">Search Ads</label>
