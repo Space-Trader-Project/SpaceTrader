@@ -33,8 +33,8 @@ public class LoginServlet extends HttpServlet {
         }
 //        BCrypt.checkpw(password, user.getPassword())
 //        boolean validAttempt =  BCrypt.checkpw(password, user.getPassword());
-        boolean validAttempt =  Password.check(password, user.getPassword());
-
+//        boolean validAttempt =  Password.check(password, user.getPassword());
+            boolean validAttempt = password.equals(user.getPassword());
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
             response.sendRedirect("/profile");
