@@ -28,9 +28,11 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> all() {
-        PreparedStatement stmt = null;
+        PreparedStatement stmt = null; //stmt = statement
+        String searchFilter = "2"; //be able to pass string into LIKE query. The string can be changed
+
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE '%${searchFilter}%'"); //get adds where title includes query
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
