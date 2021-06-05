@@ -29,10 +29,23 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> all() {
         PreparedStatement stmt = null; //stmt = statement
-        String searchFilter = "2"; //be able to pass string into LIKE query. The string can be changed
-
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE '%${searchFilter}%'"); //get adds where title includes query
+            stmt = connection.prepareStatement("SELECT * FROM ads");
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public List<Ad> filter(String search) {
+        PreparedStatement stmt = null; //stmt = statement
+        String searchFilter = "%" + search + "%"; //be able to pass string into LIKE query. By setting this to equal the POST method in the jsp's search bar, we should be able to get the search filter to work properly
+        //^^ the "2" here is just to test if the string is being successfully called on by stmt. If it works, you should only see "test2" appear in the ad list (or product) page
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ?"); //get adds where title includes searchFilter
+            stmt.setString(1, searchFilter);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {

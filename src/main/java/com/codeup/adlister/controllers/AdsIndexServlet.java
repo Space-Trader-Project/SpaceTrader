@@ -12,7 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        String test = "test"; //filter is working, now need to update string using post request
+        request.setAttribute("ads", DaoFactory.getAdsDao().filter(test));
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 //    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
