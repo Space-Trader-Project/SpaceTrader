@@ -24,6 +24,8 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
+
+
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
 
         try {
@@ -37,15 +39,17 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password, firstname, lastname) VALUES (?, ?, ?,?,?)";
+
+        String query = "INSERT INTO users (first_name, last_name, username, email, password ) VALUES (?, ?, ?,?,?)";
+
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
-            stmt.setString(1, user.getUsername());
-            stmt.setString(2, user.getEmail());
-            stmt.setString(3, user.getPassword());
+            stmt.setString(1, user.getFirstName());
+            stmt.setString(2, user.getLastName());
+            stmt.setString(3, user.getUsername());
+            stmt.setString(4, user.getEmail());
+            stmt.setString(5, user.getPassword());
 
-            stmt.setString(4, user.getFirstName());
-            stmt.setString(5, user.getLastName());
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();

@@ -27,7 +27,12 @@ User user = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
             user.getId(), // for now we'll hardcode the user id
             request.getParameter("title"),
-            request.getParameter("description")
+            request.getParameter("description"),
+                Integer.parseInt(request.getParameter("price")),
+                request.getParameter("category"),
+
+                request.getParameter("picture"),
+                Integer.parseInt(request.getParameter("quantity"))
         );
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
