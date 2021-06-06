@@ -23,12 +23,12 @@ public class MySQLUsersDao implements Users {
 
 
     @Override
-    public User findByUsername(String user_name) {
+    public User findByUsername(String username) {
         String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, user_name);
+            stmt.setString(1, username);
             return extractUser(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by username", e);
@@ -37,7 +37,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        String query = "INSERT INTO users(username, email, password, first_name, last_name) VALUES (?, ?, ?,?,?)";
+        String query = "INSERT INTO users(username, email, password, firstname, lastname) VALUES (?, ?, ?,?,?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
@@ -62,11 +62,11 @@ public class MySQLUsersDao implements Users {
         }
         return new User(
             rs.getLong("id"),
-            rs.getString("user_name"),
+            rs.getString("username"),
             rs.getString("email"),
             rs.getString("password"),
-                rs.getString("first_name"),
-                rs.getString("last_name")
+                rs.getString("firstname"),
+                rs.getString("lastname")
         );
     }
 
