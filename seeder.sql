@@ -2,11 +2,11 @@ use spacetrader_db;
 
 INSERT INTO users(first_name, last_name, user_name, email, password)
 
-VALUES ('Roland', 'Valdez', 'rv', 'roland@codeup.com','roland'),
-       ('Timothy', 'Lefkowitz', 'tl', 'tim@codeup.com','tim'),
-       ('Salim', 'Ahmedabadi', 'sa', 'salim@codeup.com','salim'),
-       ('John', 'Pierce', 'jp', 'john@codeup.com','john'),
-       ('Kenyon', 'Luce', 'kl', 'kenyon@codeup.com','kenyon');
+VALUES ('Roland', 'Valdez', 'rv', 'roland@codeup.com','$2a$12$/5mmL/9l.7J5he5k86Sr9eY82K5/UBOuEL7zEHf.IuspXbn.3Qyc.'),
+       ('Timothy', 'Lefkowitz', 'tl', 'tim@codeup.com','$2a$12$DoIFSg6SQ7ihvpivHZQzTuatswkMVsPOKiMoGZDFDI1F5Pi4XcNnm'),
+       ('Salim', 'Ahmedabadi', 'sa', 'salim@codeup.com','$2a$12$dtONDWV9ec9gIvMIJK2K.ewooo5zZN2/lG3G.4LJB85NwSBruFm0q'),
+       ('John', 'Pierce', 'jp', 'john@codeup.com','$2a$12$efyZXlfVkuFdHvp94i4H9eJlpVYcmpq8BxbbvPy8zakn/jq2FaiAu'),
+       ('Kenyon', 'Luce', 'kl', 'kenyon@codeup.com','$2a$12$3NB7W4ZWTSpPIVPPFgZKuuhONwEf8VJxWjTEij58dXPwNQEHrEShu');
 
 
 INSERT INTO ads(user_id, title, description, categories, picture, quantity, price)
