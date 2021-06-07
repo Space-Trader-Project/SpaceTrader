@@ -16,8 +16,8 @@
                     </style>
 
                     <li class="nav-item searchbar">
-                        <form class="form-inline nav-item nav-link">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <form class="form-inline nav-item nav-link" action="/ads/search" method="POST">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searchValue">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </li>
