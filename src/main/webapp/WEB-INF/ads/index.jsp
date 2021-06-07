@@ -9,7 +9,7 @@
 
 <%--    Bootstrap--%>
 
-<!-- <!--     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --> -->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --> -->
 
 <!--     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
 
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<%--<jsp:include page="/WEB-INF/partials/navbar.jsp"/>--%>
 
 <form action="/ads" method="POST">
     <label for="search">Search Ads</label>
@@ -39,9 +39,24 @@
 <h1>Here Are all the ads!</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
-        <div id="ads" class="col-md-6">
-            <h2>${ad.title}</h2>
+        <div <%--class="col-md-6"--%>>
+
+<%--            thinking of adding a function that fixes jpg links by removing everything that comes after that extension--%>
+<%--            also want to *crop* the images so they are all the same size--%>
+<%--            <c:choose>--%>
+<%--                String pic = ${ad.picture};--%>
+<%--                <c:when test="pic">--%>
+<%--                    <p>pic.length</p>--%>
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+                    <img src="${ad.picture}" width="200">
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+
+            <h2>${ad.title}</h2> <p>${ad.price}</p>
             <p>${ad.description}</p>
+<%--            <p>${ad.quantity}</p>--%>
+<%--            <p>${ad.category}</p>--%>
         </div>
     </c:forEach>
 </div>
