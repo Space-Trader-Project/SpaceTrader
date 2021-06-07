@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface Categories {
     List<Category> all();
-
     List<Category> filter(String search);
+
     Long insert(Category category);
 
 
