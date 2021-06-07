@@ -9,10 +9,13 @@ import java.io.IOException;
 
 @WebServlet(name="PostingProduct", urlPatterns = "/CreateAd")
 public class CreateProductServlet extends HttpServlet {
+
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.getRequestDispatcher("/CreateAd.jsp").forward(request, response);
     }
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
@@ -20,15 +23,6 @@ public class CreateProductServlet extends HttpServlet {
             String description = request.getParameter("description");
             String condition = request.getParameter("condition");
 
-
-//       request.setAttribute("pickedColor", pickedColor);
-
-//            request.setAttribute("newcolor", pickedColor);
-////        response.sendRedirect("/newPickedColor.jsp");
-//            request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
-
-
         }
 
-    }
-
+}
