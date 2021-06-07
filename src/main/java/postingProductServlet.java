@@ -11,23 +11,23 @@ public class postingProductServlet extends HttpServlet {
 
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-            String category = request.getParameter("category");
-            String description = request.getParameter("description");
-            String condition = request.getParameter("condition");
-
-
-//       request.setAttribute("pickedColor", pickedColor);
-
-            request.setAttribute("newcolor", pickedColor);
-//        response.sendRedirect("/newPickedColor.jsp");
-            request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
-
-
-        }
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+//
+//            String category = request.getParameter("category");
+//            String description = request.getParameter("description");
+//            String condition = request.getParameter("condition");
+//
+//
+////       request.setAttribute("pickedColor", pickedColor);
+//
+//            request.setAttribute("newcolor", pickedColor);
+////        response.sendRedirect("/newPickedColor.jsp");
+//            request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
+//
+//
+//        }
 
 
 
     }
-}
+
