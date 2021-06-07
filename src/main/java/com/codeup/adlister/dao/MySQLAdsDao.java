@@ -58,7 +58,8 @@ public class MySQLAdsDao implements Ads {
         PreparedStatement stmt = null;
         String searchFilter = "%" + search + "%";
         try{
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price > ? AND price < ?)");
+//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price > ? AND price < ?)");
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price BETWEEN ? AND ?)");
             stmt.setString(1, searchFilter);
             stmt.setDouble(2, min);
             stmt.setDouble(3, max);
