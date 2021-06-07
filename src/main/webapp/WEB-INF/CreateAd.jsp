@@ -15,14 +15,7 @@
     <link rel="stylesheet" href="/styles/stylesheet.css">
 </head>
 
-<style>
-    .postingBody {
-        margin-top: 15%; !important;
-        /*border: 5px solid #FFFF00;*/
-        display: flex;  !important;
-        justify-content: center; !important;
-    }
-</style>
+
 
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -30,7 +23,6 @@
 
 
 <div class="postingBody">
-
     <div class="card" style="width: 18rem;">
 
 <%--        <img class="card-img-top" src="${pageContext.request.contextPath}/img/rocket.png" alt="Card image cap">--%>
@@ -50,15 +42,12 @@
                     <label for="itemCondition">Item Condition</label>
                     <select class="form-control" id="itemCondition">
                         <option>NEW</option>
-                        <option>Like-New</option>
                         <option>Used</option>
-                        <option>looks damaged works great</option>
-                        <option>ugly</option>
-                        <option>for parts</option>
+                        <option>For Parts</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="Catagory">Catagory</label>
+                    <label for="Catagory">Category</label>
                     <select class="form-control" id="Catagory">
                         <option>Complete Ships</option>
                         <option>Ship Parts</option>
