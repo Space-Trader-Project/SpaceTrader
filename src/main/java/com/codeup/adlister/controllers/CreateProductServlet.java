@@ -1,3 +1,5 @@
+package com.codeup.adlister.controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -5,10 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name="postingProduct", urlPatterns = "/postingProduct")
-public class postingProductServlet extends HttpServlet {
+@WebServlet(name="PostingProduct", urlPatterns = "/CreateAd")
+public class CreateProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.getRequestDispatcher("/CreateAd.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -20,14 +23,12 @@ public class postingProductServlet extends HttpServlet {
 
 //       request.setAttribute("pickedColor", pickedColor);
 
-            request.setAttribute("newcolor", pickedColor);
-//        response.sendRedirect("/newPickedColor.jsp");
-            request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
+//            request.setAttribute("newcolor", pickedColor);
+////        response.sendRedirect("/newPickedColor.jsp");
+//            request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
 
 
         }
 
-
-
     }
-}
+
