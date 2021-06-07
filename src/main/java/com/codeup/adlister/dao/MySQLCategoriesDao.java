@@ -24,6 +24,7 @@ public class MySQLCategoriesDao implements Categories{
         }
     }
 
+
     @Override
     public List<Category> all() {
         PreparedStatement stmt = null; //stmt = statement
@@ -52,11 +53,11 @@ public class MySQLCategoriesDao implements Categories{
     }
 
     @Override
-    public List<Category> filter(String search) {
+    public List<Category> filter(String user) {
         PreparedStatement stmt;
-        String searchFilter = "%" + search + "%";
+        String searchFilter = "%" + user + "%";
         try {
-            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.categories WHERE categories LIKE ?");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.categories WHERE use LIKE ?");
             stmt.setString(1, searchFilter);
             ResultSet rs = stmt.executeQuery();
             return singleCategory(rs);
