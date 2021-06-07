@@ -42,11 +42,8 @@
                     <label for="itemCondition">Item Condition</label>
                     <select class="form-control" id="itemCondition">
                         <option>NEW</option>
-                        <option>Like-New</option>
                         <option>Used</option>
-                        <option>looks damaged works great</option>
-                        <option>ugly</option>
-                        <option>for parts</option>
+                        <option>For Parts</option>
                     </select>
                 </div>
                 <div class="form-group">
