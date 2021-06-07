@@ -11,4 +11,11 @@ public interface Ads {
     List<Ad> filter(String search);
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
+    Ad selectedAd(long id);
+    void update(Ad ad);
+
+    void deleteEntry (Long ID);
+
+    void editEntry (Long ID);
+    List<Ad> selectedAd (Long ID);
 }
