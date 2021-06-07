@@ -24,9 +24,8 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public User findByUsername(String username) {
-        String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
         try {
-
+            String query = "SELECT * FROM spacetrader_db.users WHERE username = ? LIMIT 1";
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
             return extractUser(stmt.executeQuery());
@@ -38,7 +37,7 @@ public class MySQLUsersDao implements Users {
     @Override
     public Long insert(User user) {
 
-        String query = "INSERT INTO users (first_name, last_name, username, email, password ) VALUES (?, ?, ?,?,?)";
+        String query = "INSERT INTO spacetrader_db.users (first_name, last_name, username, email, password ) VALUES (?, ?, ?,?,?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -67,8 +66,8 @@ public class MySQLUsersDao implements Users {
             rs.getString("username"),
             rs.getString("email"),
             rs.getString("password"),
-                rs.getString("firstname"),
-                rs.getString("lastname")
+                rs.getString("first_name"),
+                rs.getString("last_name")
         );
     }
 
