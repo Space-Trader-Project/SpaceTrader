@@ -7,17 +7,17 @@ public class Ad {
     private String description;
     //add price, category, and picture
     private double price;
-    private String category;
+//    private String category;
     private String picture;
     private int quantity;
 
-    public Ad(long id, long userId, String title, String description, double price, String category, String picture, int quantity) {
+    public Ad(long id, long userId, String title, String description, double price, String picture, int quantity) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
         this.price = price;
-        this.category = category;
+//        this.category = category;
         this.picture = picture;
         this.quantity = quantity;
     }
@@ -27,10 +27,12 @@ public class Ad {
         this.title = title;
         this.description = description;
         this.price = price;
-        this.category = category;
+//        this.category = category;
         this.picture = picture;
         this.quantity = quantity;
     }
+
+
 
     public long getId() {
         return id;
@@ -76,12 +78,12 @@ public class Ad {
         return price;
     }
 
-    public void setCategory(String category){
-        this.category = category;
-    }
-    public String getCategory(){
-        return category;
-    }
+//    public void setCategory(String category){
+//        this.category = category;
+//    }
+//    public String getCategory(){
+//        return category;
+//    }
 
     public void setPicture(String picture){
         this.picture = picture;
