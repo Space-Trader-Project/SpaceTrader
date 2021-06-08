@@ -30,7 +30,6 @@ User user = (User) request.getSession().getAttribute("user");
             request.getParameter("description"),
                 Integer.parseInt(request.getParameter("price")),
                 request.getParameter("category"),
-
                 request.getParameter("picture"),
                 Integer.parseInt(request.getParameter("quantity"))
         );

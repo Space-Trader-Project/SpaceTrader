@@ -13,7 +13,7 @@
 <%--    <label for="4">hello3</label><input type="checkbox" id="4">--%>
 <%--    <label for="5">hello4</label><input type="checkbox" id="5">--%>
 <%--</form>--%>
-<form action="ads/search" method="POST">
+<form action="/ads/search" method="POST">
     <label for="minPrice">min price</label>
     <input type="text" id="minPrice" name="minPrice"> to
     <label for="maxPrice">max price</label>

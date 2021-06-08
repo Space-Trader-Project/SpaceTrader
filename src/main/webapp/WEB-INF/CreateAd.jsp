@@ -29,38 +29,22 @@
         <div class="card-body">
             <h5 class="card-title">List a Product</h5>
 
-            <form>
+            <form method="post" action="/CreateAd">
                 <div class="form-group">
-                    <label for="itemtitle">Title</label>
-                    <input type="text" class="form-control" id="itemtitle" placeholder="Space X Falcon">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" placeholder="Space X Falcon" name="title">
                 </div>
                 <div class="form-group">
                     <label for="itemPrice">Price</label>
-                    <input type="text" class="form-control" id="itemPrice" placeholder="2,300,000">
+                    <input type="text" class="form-control" id="itemPrice" placeholder="2,300,000" name="itemPrice">
                 </div>
                 <div class="form-group">
-                    <label for="itemCondition">Item Condition</label>
-                    <select class="form-control" id="itemCondition">
-                        <option>NEW</option>
-                        <option>Used</option>
-                        <option>For Parts</option>
-                    </select>
+                    <label for="quantity">Quantity</label>
+                    <input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity">
                 </div>
                 <div class="form-group">
-                    <label for="Catagory">Category</label>
-                    <select class="form-control" id="Catagory">
-                        <option>Complete Ships</option>
-                        <option>Ship Parts</option>
-                        <option>Satellites</option>
-                        <option>Fuel Cells</option>
-                        <option>Land Rovers</option>
-                        <option>Drones</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <label for="Description">Description</label>
+                    <textarea class="form-control" id="Description" rows="3" name="Description"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Example file input</label>
