@@ -14,7 +14,7 @@ import java.util.List;
 public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        request.setAttribute("ads", DaoFactory.getAdsDao().all() );
         request.getRequestDispatcher("/index.jsp").forward(request, response);
 
 
