@@ -37,7 +37,7 @@ public class postingProductServlet extends HttpServlet {
 
 //       request.setAttribute("pickedColor", pickedColor);
 
-            request.setAttribute("newcolor", pickedColor);
+            request.setAttribute("newcolor", pickedColor );
 //        response.sendRedirect("/newPickedColor.jsp");
             request.getRequestDispatcher("/newPickedColor.jsp").forward(request, response);
 
