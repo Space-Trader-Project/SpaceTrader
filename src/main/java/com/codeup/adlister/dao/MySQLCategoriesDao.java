@@ -57,7 +57,7 @@ public class MySQLCategoriesDao implements Categories{
         PreparedStatement stmt;
         String searchFilter = "%" + user + "%";
         try {
-            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.categories WHERE use LIKE ?");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.categories WHERE ad_id LIKE ?");
             stmt.setString(1, searchFilter);
             ResultSet rs = stmt.executeQuery();
             return singleCategory(rs);
