@@ -2,6 +2,7 @@
 CREATE DATABASE IF NOT EXISTS spacetrader_db;
 USE spacetrader_db;
 
+
 CREATE TABLE IF NOT EXISTS users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(250) NOT NULL,

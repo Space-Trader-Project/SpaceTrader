@@ -1,15 +1,17 @@
 package com.codeup.adlister.models;
 
 public class Ad {
+
     private long id;
     private long userId;
     private String title;
     private String description;
     //add price, category, and picture
     private double price;
-//    private String category;
+    private String category;
     private String picture;
     private int quantity;
+    //    private final String condition;
 
     public Ad(long id, long userId, String title, String description, double price, String picture, int quantity) {
         this.id = id;
@@ -30,6 +32,17 @@ public class Ad {
 //        this.category = category;
         this.picture = picture;
         this.quantity = quantity;
+    }
+
+
+
+    //tims creating an add page
+    public Ad(String category, String description, String condition, String picture, String title) {
+        this.category = category;
+        this.description = description;
+        this.quantity = quantity;
+        this.picture = picture;
+        this.title = title;
     }
 
 
