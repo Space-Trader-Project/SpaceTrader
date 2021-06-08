@@ -14,12 +14,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.*;
 
-@WebServlet(name="controllers.SearchAdsServlet", urlPatterns = "/ads/search")
+@WebServlet(name = "controllers.SearchAdsServlet", urlPatterns = "/ads/search")
 public class SearchAdsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String searchValue = request.getParameter("searchValue"); //grabs search value from the input name value in index.jsp
-//        String maxPrice = request.getParameter("maxPrice");
-//        String minPrice = request.getParameter("minPrice");
+        String maxPrice = request.getParameter("maxPrice");
+        String minPrice = request.getParameter("minPrice");
 //
 //        request.setAttribute("ads", DaoFactory.getAdsDao().filterPrice(minPrice, maxPrice));
 
@@ -34,25 +34,19 @@ public class SearchAdsServlet extends HttpServlet {
 //List<Ad> searched = DaoFactory.getAdsDao().title(searchValue);
 // List<Ad> searched;
 //
-//        if(minPrice != null & maxPrice != null){
-//            double min = Integer.parseInt(request.getParameter("minPrice"));
-//            double max = Integer.parseInt(request.getParameter("maxPrice"));
-//            searched = DaoFactory.getAdsDao().budget(searchValue, min, max);
-//        } else {
-//            searched = DaoFactory.getAdsDao().title(searchValue);
-//        }
+            if (minPrice != null & maxPrice != null) {
+                String searchKey = (String) request.getSession().getAttribute("search");
+                double min = Integer.parseInt(request.getParameter("minPrice"));
+                double max = Integer.parseInt(request.getParameter("maxPrice"));
+                request.setAttribute("ads", DaoFactory.getAdsDao().budget(searchKey, min, max));
+            } else {
+                request.getSession().setAttribute("search", searchValue);
+                request.setAttribute("ads", DaoFactory.getAdsDao().title(searchValue));
+            }
+
 //        request.setAttribute("ads", DaoFactory.getAdsDao().title(searchValue));
-
-//        if(minPrice != null & maxPrice != null){
-//            double min = Integer.parseInt(request.getParameter("minPrice"));
-//            double max = Integer.parseInt(request.getParameter("maxPrice"));
-//            request.setAttribute("ads", DaoFactory.getAdsDao().budget(searchValue, min, max));
-//        }
-        // inside of a servlet
-
-        request.setAttribute("ads", DaoFactory.getAdsDao().title(searchValue));
-        request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
-    }
+            request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
+        }
 }
 //        response.getWriter().println(searchValue);
 //        boolean isPost = "GET".equals(request.getMethod());
