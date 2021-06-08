@@ -25,8 +25,12 @@
 <%--    google icons--%>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
+<style>
+ body{
+  margin: 150px;
+ }
+</style>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
 

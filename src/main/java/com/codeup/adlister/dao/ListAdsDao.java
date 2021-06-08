@@ -16,13 +16,27 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
-    public List<Ad> filter(String search) {
+    public List<Ad> title(String search) {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
     }
 
+    @Override
+    public List<Ad> budget(String title, double min, double max){
+        if (ads == null) {
+            ads = generateAds();
+        }
+        return ads;
+    }
+    @Override
+    public List<Ad> filterAdsByUser(String user){
+        if (ads == null) {
+            ads = generateAds();
+        }
+        return ads;
+    };
     public Long insert(Ad ad) {
         // make sure we have ads
         if (ads == null) {
@@ -33,6 +47,32 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+    @Override
+    public Ad selectedAd(long id) {
+        return null;
+    }
+
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public void deleteEntry(Long ID) {
+
+    }
+
+    @Override
+    public void editEntry(Long ID) {
+
+    }
+
+
+    @Override
+    public List<Ad> selectedAd(Long ID) {
+        return null;
     }
 
     private List<Ad> generateAds() {

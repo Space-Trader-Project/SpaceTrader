@@ -80,7 +80,7 @@ public class Ad {
     }
 
 //    private double price;
-//    private String category;
+      private String category;
 //    private String picture;
 //    private int quantity;
 
@@ -91,12 +91,12 @@ public class Ad {
         return price;
     }
 
-//    public void setCategory(String category){
-//        this.category = category;
-//    }
-//    public String getCategory(){
-//        return category;
-//    }
+    public void setCategory(String category){
+        this.category = category;
+    }
+    public String getCategory(){
+        return category;
+    }
 
     public void setPicture(String picture){
         this.picture = picture;
