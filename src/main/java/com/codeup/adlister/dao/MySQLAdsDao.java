@@ -37,7 +37,18 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
-
+     @Override
+     public List<Ad> filterAdsByUser(String user){
+         PreparedStatement stmt;
+         try {
+             stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE user_id IN (SELECT id FROM spacetrader_db.users WHERE username Like ?)");
+             stmt.setString(1, user);
+             ResultSet rs = stmt.executeQuery();
+             return createAdsFromResults(rs);
+         } catch (SQLException e) {
+             throw new RuntimeException("Error retrieving all ads.", e);
+         }
+     }
     @Override
     public List<Ad> title(String search) {
         PreparedStatement stmt = null; //stmt = statement
@@ -88,6 +99,33 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    @Override
+    public Ad selectedAd(long id) {
+        return null;
+    }
+
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public void deleteEntry(Long ID) {
+    String query = "DELETE FROM ads WHERE id = ?";
+
+    }
+
+
+    @Override
+    public void editEntry(Long ID) {
+
+    }
+
+    @Override
+    public List<Ad> selectedAd(Long ID) {
+        return null;
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
