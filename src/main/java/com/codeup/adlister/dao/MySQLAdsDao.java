@@ -30,7 +30,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null; //stmt = statement
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -55,7 +55,7 @@ public class MySQLAdsDao implements Ads {
         String searchFilter = "%" + search + "%"; //be able to pass string into LIKE query. By setting this to equal the POST method in the jsp's search bar, we should be able to get the search filter to work properly
         //^^ the "2" here is just to test if the string is being successfully called on by stmt. If it works, you should only see "test2" appear in the ad list (or product) page
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ?"); //get adds where title includes searchFilter
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ?"); //get adds where title includes searchFilter
             stmt.setString(1, searchFilter);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
@@ -70,7 +70,7 @@ public class MySQLAdsDao implements Ads {
         String searchFilter = "%" + search + "%";
         try{
 //            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price > ? AND price < ?)");
-            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price BETWEEN ? AND ?)");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?)");
             stmt.setString(1, searchFilter);
             stmt.setDouble(2, min);
             stmt.setDouble(3, max);
