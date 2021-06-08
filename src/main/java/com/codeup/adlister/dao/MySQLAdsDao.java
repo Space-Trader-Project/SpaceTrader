@@ -30,7 +30,7 @@ public class MySQLAdsDao implements Ads {
     public List<Ad> all() {
         PreparedStatement stmt = null; //stmt = statement
         try {
-            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads");
+            stmt = connection.prepareStatement("SELECT * FROM ads");
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -50,7 +50,7 @@ public class MySQLAdsDao implements Ads {
          }
      }
     @Override
-    public List<Ad> filter(String search) {
+    public List<Ad> title(String search) {
         PreparedStatement stmt = null; //stmt = statement
         String searchFilter = "%" + search + "%"; //be able to pass string into LIKE query. By setting this to equal the POST method in the jsp's search bar, we should be able to get the search filter to work properly
         //^^ the "2" here is just to test if the string is being successfully called on by stmt. If it works, you should only see "test2" appear in the ad list (or product) page
@@ -60,6 +60,23 @@ public class MySQLAdsDao implements Ads {
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public List<Ad> budget(String search, double min, double max){
+        PreparedStatement stmt = null;
+        String searchFilter = "%" + search + "%";
+        try{
+//            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price > ? AND price < ?)");
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ? AND (price BETWEEN ? AND ?)");
+            stmt.setString(1, searchFilter);
+            stmt.setDouble(2, min);
+            stmt.setDouble(3, max);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e){
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
@@ -82,6 +99,33 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    @Override
+    public Ad selectedAd(long id) {
+        return null;
+    }
+
+    @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
+    public void deleteEntry(Long ID) {
+    String query = "DELETE FROM ads WHERE id = ?";
+
+    }
+
+
+    @Override
+    public void editEntry(Long ID) {
+
+    }
+
+    @Override
+    public List<Ad> selectedAd(Long ID) {
+        return null;
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
