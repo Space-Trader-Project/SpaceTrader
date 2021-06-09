@@ -30,6 +30,23 @@ public class ListAdsDao implements Ads {
         }
         return ads;
     }
+
+    @Override
+    public List<Ad> category(String search, String category) {
+        if (ads == null) {
+            ads = generateAds();
+        }
+        return ads;
+    }
+
+    @Override
+    public List<Ad> filterAll(String search, String category, double min, double max) {
+        if (ads == null) {
+            ads = generateAds();
+        }
+        return ads;
+    }
+
     @Override
     public List<Ad> filterAdsByUser(String user){
         if (ads == null) {
