@@ -17,6 +17,10 @@ public interface Ads {
 
     List<Ad> budget(String search, double min, double max);
 
+    List<Ad> category(String search, String category);
+
+    List<Ad> filterAll(String search, String category, double min, double max);
+
     Ad selectedAd(long id);
     void update(Ad ad);
 

@@ -1,5 +1,5 @@
-
-CREATE DATABASE IF NOT EXISTS spacetrader_db;
+DROP DATABASE IF EXISTS spacetrader_db;
+CREATE DATABASE spacetrader_db;
 USE spacetrader_db;
 
 
@@ -25,14 +25,6 @@ CREATE TABLE IF NOT EXISTS ads (
      price DOUBLE,
      PRIMARY KEY (id),
      FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-CREATE TABLE IF NOT EXISTS user_type (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_id INT UNSIGNED NOT NULL,
-    user_type VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE IF NOT EXISTS categories (
