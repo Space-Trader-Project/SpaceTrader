@@ -13,8 +13,17 @@
 <body>
 <h1>Edit An Ad</h1>
 <form action="/Ads/editAd" method="post">
-    <label for="name">Name</label>
-    <input name="name" id="name" type="text">
+    <label for="title">Title</label>
+    <input name="title" id="title" type="text">
+    <br />
+    <label for="description">Description</label>
+    <input name="description" id="description" type="text">
+    <br />
+    <label for="picture">Picture</label>
+    <input name="picture" id="picture" type="text">
+    <br />
+    <label for="quantity">Quantity</label>
+    <input name="quantity" id="quantity" type="text">
     <br />
     <label for="price">Price</label>
     <input name="price" id="price" type="text">

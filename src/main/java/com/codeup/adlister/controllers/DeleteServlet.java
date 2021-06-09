@@ -13,10 +13,13 @@ import java.io.IOException;
 public class DeleteServlet extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String hiddenParam = req.getParameter("selectedAdDelete");
-        long id = Long.parseLong(hiddenParam);
-        DaoFactory.getAdsDao().deleteEntry(id);
-        resp.sendRedirect("/profile");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String title = request.getParameter("title");
+        String description =  request.getParameter("description");
+        double price = Double.parseDouble(request.getParameter("price"));
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        String picture = request.getParameter("picture");
+
+        DaoFactory.getAdsDao().deleteEntry(title, description, price, quantity, picture);
     }
 }
