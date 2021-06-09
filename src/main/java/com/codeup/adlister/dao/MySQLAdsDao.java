@@ -107,8 +107,23 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public void update(Ad ad) {
-
+    public void update(String title, String description, double price, int quantity, String picture ) {
+       try {
+            String insertQuery = "UPDATE spacetrader_db.ads SET(user_id, title, description, price, picture, quantity)) VALUES (?, ?, ?,  ?, ?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ad.getUserId());
+            stmt.setString(2, ad.getTitle());
+            stmt.setString(3, ad.getDescription());
+            stmt.setDouble(4, ad.getPrice());
+            stmt.setString(5, ad.getPicture());
+            stmt.setInt(6, ad.getQuantity());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new ad.", e);
+        }
     }
 
     @Override
