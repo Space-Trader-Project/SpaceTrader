@@ -80,7 +80,7 @@ public class Ad {
     }
 
 //    private double price;
-      private String category;
+//      private String category;
 //    private String picture;
 //    private int quantity;
 
