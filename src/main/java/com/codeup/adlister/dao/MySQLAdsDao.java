@@ -107,6 +107,11 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public void update(Ad ad) {
+
+    }
+
+    @Override
     public void update(String title, String description, double price, int quantity, String picture ) {
        try {
             String insertQuery = "UPDATE spacetrader_db.ads SET(user_id, title, description, price, picture, quantity)) VALUES (?, ?, ?,  ?, ?, ?)";

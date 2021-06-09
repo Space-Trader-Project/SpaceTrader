@@ -42,7 +42,7 @@ public class EditServlet extends HttpServlet {
 ////            newAD.setCategory(request.getParameter("category"));
 //        }
 //
-            DaoFactory.getAdsDao().update(title, description, price, quantity, picture);
+            DaoFactory.getAdsDao().update( title, description, price, quantity, picture);
 
         }
 }
