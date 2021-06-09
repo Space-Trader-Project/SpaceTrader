@@ -41,6 +41,7 @@ public class EditProfileServlet extends HttpServlet {
 
             String hashPassword = Password.hash(newpassword);
             User updatedUser = new User( user.getId(), username, email, hashPassword, firstName, lastName);
+            req.getSession().setAttribute("user", updatedUser);
             DaoFactory.getUsersDao().update(updatedUser);
             resp.sendRedirect("/login");
         } else {
