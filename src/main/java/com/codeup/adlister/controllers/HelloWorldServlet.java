@@ -7,10 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/home")
+@WebServlet(name = "controllers.HelloWorldServlet", urlPatterns = "/")
 public class HelloWorldServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         request.setAttribute("ads", DaoFactory.getAdsDao().all() );
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
     }
 }
