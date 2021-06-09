@@ -81,4 +81,16 @@ public class MySQLCategoriesDao implements Categories{
             throw new RuntimeException("Error creating a new categories.", e);
         }
     }
+    @Override
+    public void deleteEntry(Long ID) {
+        try {
+            String insertQuery = "DELETE FROM spacetrader_db.categories WHERE ad_id=?";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ID);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new ad.", e);
+
+        }
+    }
 }

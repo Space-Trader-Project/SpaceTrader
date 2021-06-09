@@ -45,6 +45,8 @@
             <h2>${ad.title}</h2>
             <h3>$${ad.price}</h3>
             <p>${ad.description}</p>
+                    <a href="/Ads/editAd?edit=${ad.id}">Edit</a>
+                    <a href="/deleteAd?delete=${ad.id}">Delete</a>
                 <%--            <p>${ad.quantity}</p>--%>
                 <%--            <p>${ad.category}</p>--%>
         </div>

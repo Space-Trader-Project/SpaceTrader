@@ -28,6 +28,7 @@
     <label for="price">Price</label>
     <input name="price" id="price" type="text">
     <br />
+    <input name = "edit" id="edit" type="hidden" value="${EditAll.id}">
     <input type="submit">
 </form>
 </body>
