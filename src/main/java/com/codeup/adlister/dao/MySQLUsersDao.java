@@ -68,9 +68,25 @@ public class MySQLUsersDao implements Users {
             rs.getString("username"),
             rs.getString("email"),
             rs.getString("password"),
-                rs.getString("first_name"),
-                rs.getString("last_name")
+            rs.getString("first_name"),
+            rs.getString("last_name")
         );
+    }
+
+    public void update(User user){
+        try {
+            String updateQuery = "UPDATE spacetrader_db.users SET first_name = ?, last_name = ?, username = ?, email = ?, password = ? WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(updateQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getFirstName());
+            stmt.setString(2, user.getLastName());
+            stmt.setString(3, user.getUsername());
+            stmt.setString(4, user.getEmail());
+            stmt.setString(5, user.getPassword());
+            stmt.setLong(6, user.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting product #" + user.getId(), e);
+        }
     }
 
 }

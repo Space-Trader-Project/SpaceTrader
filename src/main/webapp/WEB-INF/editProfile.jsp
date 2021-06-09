@@ -31,6 +31,10 @@
       <input id="password" name="password" class="form-control" type="password">
     </div>
     <div class="form-group">
+      <label for="new_password">New Password</label>
+      <input id="new_password" name="new_password" class="form-control" type="password">
+    </div>
+    <div class="form-group">
       <label for="confirm_password">Confirm Password</label>
       <input id="confirm_password" name="confirm_password" class="form-control" type="password">
     </div>
