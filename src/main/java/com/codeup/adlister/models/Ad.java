@@ -11,6 +11,7 @@ public class Ad {
     private String category;
     private String picture;
     private int quantity;
+    private long user_id;
     //    private final String condition;
 
     public Ad(long id, long userId, String title, String description, double price, String picture, int quantity) {
@@ -37,14 +38,22 @@ public class Ad {
 
 
     //tims creating an add page
-    public Ad(String category, String description, String condition, String picture, String title) {
-        this.category = category;
+    public Ad(String title, String description, double price, String picture, int quantity) {
+
         this.description = description;
         this.quantity = quantity;
         this.picture = picture;
         this.title = title;
     }
 
+    public Ad(String title, String description, double price, String picture, int quantity, Long user_id) {
+
+        this.description = description;
+        this.quantity = quantity;
+        this.picture = picture;
+        this.title = title;
+        this.user_id = user_id;
+    }
 
 
     public long getId() {
@@ -91,12 +100,12 @@ public class Ad {
         return price;
     }
 
-//    public void setCategory(String category){
-//        this.category = category;
-//    }
-//    public String getCategory(){
-//        return category;
-//    }
+    public void setCategory(String category){
+        this.category = category;
+    }
+    public String getCategory(){
+        return category;
+    }
 
     public void setPicture(String picture){
         this.picture = picture;
