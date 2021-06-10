@@ -43,28 +43,41 @@
 <%--    <input id="submit" type="submit">--%>
 <%--</form>--%>
 
-
-
-
 <h1 class="header">Our Current Offerings</h1>
-<div class="container">
+<%--<jsp:include page="/WEB-INF/ads/search.jsp"/>--%>
+<%--<div class="container">--%>
+<div class="d-flex flex-wrap mx-2 my-1 w-100 p-0">
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>
-            <h2 class="header"><a class="inputs" href="/ads/info?id=${ad.id}">${ad.title}</a></h2>
-            <h3 style="color:yellow">$${ad.price}</h3>
-            <p class="inputs">${ad.description}</p>
-
-<%--                    <a href="/ads/edit?id=${ad.id}">Edit</a>--%>
-<%--                    <a href="/ads/delete?id=${ad.id}">Delete</a>--%>
-                <%--            <p>${ad.quantity}</p>--%>
-                <%--            <p>${ad.category}</p>--%>
-
-            <p style="color: yellow">In Stock: ${ad.quantity}</p>
-                <%--                            <p>${ad.categories}</p>--%>
-
+        <div class="card mx-1 my-1" style="width: 18rem;">
+            <img src="${ad.picture}" class="card-img-top" height="200" alt="...">
+            <div class="card-body">
+                <h5 class="card-title header" style="color:black"><a href="/ads/info?id=${ad.id}">${ad.title}</a></h5>
+                <h3 style="color:black">$${ad.price}</h3>
+                <p class="card-text">${ad.description}</p>
+                <p style="color: black">In Stock: ${ad.quantity}</p>
+<%--                <p style="color: black">Category: ${ad.category}</p>--%>
+            </div>
         </div>
     </c:forEach>
 </div>
+<%--    <c:forEach var="ad" items="${ads}">--%>
+
+<%--        <div class="col-md-6">--%>
+<%--            <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>--%>
+<%--            <h2 class="header"><a class="inputs" href="/ads/info?id=${ad.id}">${ad.title}</a></h2>--%>
+<%--            <h3 style="color:yellow">$${ad.price}</h3>--%>
+<%--            <p class="inputs">${ad.description}</p>--%>
+
+<%--&lt;%&ndash;                    <a href="/ads/edit?id=${ad.id}">Edit</a>&ndash;%&gt;--%>
+<%--&lt;%&ndash;                    <a href="/ads/delete?id=${ad.id}">Delete</a>&ndash;%&gt;--%>
+<%--                &lt;%&ndash;            <p>${ad.quantity}</p>&ndash;%&gt;--%>
+<%--                &lt;%&ndash;            <p>${ad.category}</p>&ndash;%&gt;--%>
+
+<%--            <p style="color: yellow">In Stock: ${ad.quantity}</p>--%>
+<%--                &lt;%&ndash;                            <p>${ad.categories}</p>&ndash;%&gt;--%>
+
+<%--        </div>--%>
+<%--    </c:forEach>--%>
+<%--</div>--%>
 </body>
 </html>

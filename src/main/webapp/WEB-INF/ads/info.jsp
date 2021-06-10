@@ -27,6 +27,9 @@
             <h3 style="color:yellow">$${singleAd.price}</h3>
             <p class="inputs">${singleAd.description}</p>
             <p style="color:yellow">In Stock: ${singleAd.quantity}</p>
+            <p class="inputs">For purchasing information please contact:</p>
+            <p class="inputs">${user.firstName}</p>
+            <p class="inputs">${user.email}</p>
                 <%--                            <p>${ad.categories}</p>--%>
         </div>
 

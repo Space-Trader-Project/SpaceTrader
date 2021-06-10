@@ -34,6 +34,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public User findByUserId(Long userId) {
+        try {
+            String query = "SELECT * FROM spacetrader_db.users WHERE id = ? LIMIT 1";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, userId);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by user", e);
+        }
+    }
 
 
     @Override

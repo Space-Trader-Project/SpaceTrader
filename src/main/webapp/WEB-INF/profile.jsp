@@ -27,7 +27,7 @@
         <a href="/profile/edit" class="btn btn-outline-warning">Edit Profile</a>
 
         <h2 class="header mt-2">Your published ads:</h2>
-        <div class="d-flex mx-2 my-1 w-100 p-0">
+        <div class="d-flex flex-wrap mx-2 my-1 w-100 p-0">
 
 <c:forEach var="ad" items="${ads}">
         <div class="card mx-1" style="width: 18rem;">
@@ -35,6 +35,8 @@
             <div class="card-body">
                 <h5 class="card-title header" style="color:black">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
+                <p class="card-text">$${ad.price}</p>
+                <p class="card-text">${ad.quantity}</p>
                 <div class="d-flex justify-content-center">
                     <form action="/ads/edit" method="GET">
                         <input type="hidden" name="id" value="${ad.id}">

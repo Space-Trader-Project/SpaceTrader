@@ -6,11 +6,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav pull-right">
-
-                <form class="form-inline my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" action="/ads" name="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-warning my-sm-0" type="submit">Search</button>
-                </form>
+            <form class="form-inline nav-item nav-link" action="/ads/search" method="POST">
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="searchValue">
+                <button class="btn btn-outline-warning" type="submit">Search</button>
+            </form>
+<%--                <form class="form-inline my-lg-0">--%>
+<%--                    <input class="form-control mr-sm-2" type="search" action="/ads" name="search" placeholder="Search" aria-label="Search">--%>
+<%--                    <button class="btn btn-outline-warning my-sm-0" type="submit">Search</button>--%>
+<%--                </form>--%>
 
 <%--            <li class="nav-item">--%>
 <%--                <a class="nav-link" href="/PostingProduct"><button class="btn btn-outline-warning" type="submit">Sell Your Goods</button></a>--%>
