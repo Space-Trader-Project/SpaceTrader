@@ -16,8 +16,7 @@ import java.util.List;
 public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        long ID = Long.parseLong(request.getParameter("edit"));
+        long ID = Long.parseLong(request.getParameter("id"));
         Ad newAD = DaoFactory.getAdsDao().findById(ID);
         request.setAttribute("EditAll", newAD);
         request.getRequestDispatcher("/WEB-INF/editAd.jsp").forward(request, response);
@@ -50,7 +49,7 @@ public class EditServlet extends HttpServlet {
 //        }
 //
             DaoFactory.getAdsDao().update(newAD);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
 
         }
 }
