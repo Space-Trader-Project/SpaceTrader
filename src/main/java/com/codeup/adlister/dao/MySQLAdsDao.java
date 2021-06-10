@@ -103,23 +103,6 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public Long insert(Ad ad) {
-//        if()
-        try {
-            String insertQuery = "INSERT INTO spacetrader_db.ads(title, description, price, picture, quantity, user_id) VALUES (?, ?, ?,  ?, ?, ?)";
-            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
-
-            stmt.setString(1, ad.getTitle());
-            stmt.setString(2, ad.getDescription());
-            stmt.setDouble(3, ad.getPrice());
-            stmt.setString(4, ad.getPicture());
-            stmt.setInt(5, ad.getQuantity());
-            stmt.setLong(6, ad.getUserId());
-            stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            rs.next();
-            return rs.getLong(1);
-
     public Ad selectedAd(long id) {
         return null;
     }
@@ -145,7 +128,6 @@ public class MySQLAdsDao implements Ads {
 
 
             return null;
-
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
@@ -290,4 +272,5 @@ public class MySQLAdsDao implements Ads {
             return ads;
         }
     }
+
 
