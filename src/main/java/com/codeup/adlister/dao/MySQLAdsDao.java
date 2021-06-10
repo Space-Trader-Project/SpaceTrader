@@ -86,13 +86,13 @@ public class MySQLAdsDao implements Ads {
         PreparedStatement stmt = null;
         String searchTitle = "%" + search + "%";
         try{
-            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
             stmt.setString(1, searchTitle);
             stmt.setString(2, category);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e){
-            throw new RuntimeException("Error retrieving all ads.", e);
+            throw new RuntimeException("Error retrieving all ads by category.", e);
         }
     }
 
@@ -101,7 +101,7 @@ public class MySQLAdsDao implements Ads {
         PreparedStatement stmt = null;
         String searchTitle = "%" + search + "%";
         try{
-            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND AND (price BETWEEN ? AND ?) AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?) AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
             stmt.setString(1, searchTitle);
             stmt.setDouble(2, min);
             stmt.setDouble(3, max);
