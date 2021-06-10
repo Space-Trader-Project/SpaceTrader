@@ -44,6 +44,7 @@
 <%--</form>--%>
 
 <h1 class="header">Our Current Offerings</h1>
+<%--<jsp:include page="/WEB-INF/ads/search.jsp"/>--%>
 <%--<div class="container">--%>
 <div class="d-flex flex-wrap mx-2 my-1 w-100 p-0">
     <c:forEach var="ad" items="${ads}">
@@ -54,6 +55,7 @@
                 <h3 style="color:black">$${ad.price}</h3>
                 <p class="card-text">${ad.description}</p>
                 <p style="color: black">In Stock: ${ad.quantity}</p>
+<%--                <p style="color: black">Category: ${ad.category}</p>--%>
             </div>
         </div>
     </c:forEach>

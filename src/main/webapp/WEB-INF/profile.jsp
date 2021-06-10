@@ -35,6 +35,8 @@
             <div class="card-body">
                 <h5 class="card-title header" style="color:black">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
+                <p class="card-text">$${ad.price}</p>
+                <p class="card-text">${ad.quantity}</p>
                 <div class="d-flex justify-content-center">
                     <form action="/ads/edit" method="GET">
                         <input type="hidden" name="id" value="${ad.id}">
