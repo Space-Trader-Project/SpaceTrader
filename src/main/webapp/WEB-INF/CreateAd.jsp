@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <label for="picture">Upload a Photo</label>
                         <label type="hidden" name="user_id" value="${sessionScope.user.id}"></label>
-                        <input type="file" class="form-control-file" id="picture">
+                        <input type="text" class="form-control-file" id="picture">
                     </div>
                     <p></p>
                     <button type="submit" class="btn btn-primary">Post Product</button>
