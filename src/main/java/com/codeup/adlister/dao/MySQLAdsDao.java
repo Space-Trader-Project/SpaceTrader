@@ -50,6 +50,16 @@ public class MySQLAdsDao implements Ads {
 
         }
     }
+
+    @Override
+    public void editEntry(Long ID) {
+
+    }
+
+    @Override
+    public List<Ad> selectedAd(Long ID) {
+        return null;
+    }
 //    @Override
 //
 //    public void editEntry(Long ID) {
@@ -90,6 +100,11 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
 
+    }
+
+    @Override
+    public Ad selectedAd(long id) {
+        return null;
     }
 
     @Override
