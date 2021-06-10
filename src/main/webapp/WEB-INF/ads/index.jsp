@@ -38,12 +38,12 @@
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>
-            <h2><a href="/ads/info">${ad.title}</a></h2>
+            <h2><a href="/ads/info?id=${ad.id}">${ad.title}</a></h2>
             <h3>$${ad.price}</h3>
             <p>${ad.description}</p>
 
-                    <a href="/Ads/editAd?edit=${ad.id}">Edit</a>
-                    <a href="/deleteAd?delete=${ad.id}">Delete</a>
+<%--                    <a href="/ads/edit?id=${ad.id}">Edit</a>--%>
+<%--                    <a href="/ads/delete?id=${ad.id}">Delete</a>--%>
                 <%--            <p>${ad.quantity}</p>--%>
                 <%--            <p>${ad.category}</p>--%>
 
