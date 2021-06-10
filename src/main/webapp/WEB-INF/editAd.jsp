@@ -23,21 +23,21 @@
 
 
 
-<h1>Edit An Ad</h1>
+<h1 class="header" >Edit An Ad</h1>
 <form action="/ads/edit" method="post">
-    <label for="title">Title</label>
+    <label class="inputs" for="title">Title</label>
     <input name="title" id="title" type="text">
     <br />
-    <label for="description">Description</label>
+    <label class="inputs"  for="description">Description</label>
     <input name="description" id="description" type="text">
     <br />
-    <label for="picture">Picture</label>
+    <label class="inputs"  for="picture">Picture</label>
     <input name="picture" id="picture" type="text">
     <br />
-    <label for="quantity">Quantity</label>
-    <input name="quantity" id="quantity" type="text">
+    <label class="inputs" for="quantity">Quantity</label>
+    <input  name="quantity" id="quantity" type="text">
     <br />
-    <label for="price">Price</label>
+    <label class="inputs"  for="price">Price</label>
     <input name="price" id="price" type="text">
     <br />
     <input name = "edit" id="edit" type="hidden" value="${EditAll.id}">
