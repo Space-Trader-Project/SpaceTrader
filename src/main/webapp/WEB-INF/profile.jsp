@@ -27,7 +27,7 @@
         <a href="/profile/edit" class="btn btn-outline-warning">Edit Profile</a>
 
         <h2 class="header mt-2">Your published ads:</h2>
-        <div class="d-flex mx-2 my-1 w-100 p-0">
+        <div class="d-flex flex-wrap mx-2 my-1 w-100 p-0">
 
 <c:forEach var="ad" items="${ads}">
         <div class="card mx-1" style="width: 18rem;">
