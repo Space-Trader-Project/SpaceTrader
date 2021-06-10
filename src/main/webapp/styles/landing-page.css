@@ -2,8 +2,10 @@
     font-family: 'Bungee Shade', cursive;
     color: white;
 }
+
 body {
-    background-image: url("../img/nasa-rTZW4f02zY8-unsplash.jpg");
+    /*background-color: blue;*/
+    background-image: url("/img/nasa-rTZW4f02zY8-unsplash.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center top;
