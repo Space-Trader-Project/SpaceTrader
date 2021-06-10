@@ -104,7 +104,7 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Ad selectedAd(long id) {
-        git return null;
+        return null;
     }
 
     @Override
