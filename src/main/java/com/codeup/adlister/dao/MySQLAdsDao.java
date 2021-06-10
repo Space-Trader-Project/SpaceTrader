@@ -121,7 +121,7 @@ public class MySQLAdsDao implements Ads {
             return rs.getLong(1);
 
     public Ad selectedAd(long id) {
-        return null;
+        git return null;
     }
 
     @Override
