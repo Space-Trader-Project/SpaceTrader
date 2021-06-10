@@ -22,17 +22,24 @@ public class CreateProductServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+
+            String title = request.getParameter("title");
             String category = request.getParameter("category");
             String description = request.getParameter("description");
-            String quantity = request.getParameter("quantity");
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
             String picture = request.getParameter("picture");
-            String title = request.getParameter("title");
+            double price = Double.parseDouble(request.getParameter("price"));
 
-            Ad newAd = new Ad(category, description, quantity, picture, title);
+
+            Long user_id = Long.parseLong(request.getParameter("user_id"));
+
+
+            //(user_id, title, description, price, picture, quantity)
+
+            Ad newAd = new Ad(title, description, price, picture, quantity, user_id);
             DaoFactory.getAdsDao().insert(newAd);
 
             response.sendRedirect("/CreateAd");
-
 
 
 

@@ -12,7 +12,7 @@ public class LogoutServlet extends HttpServlet {
         request.getSession().removeAttribute("user");
         request.getSession().invalidate();
 
-        request.getSession().removeAttribute("hidden");
+//        request.getSession().removeAttribute("hidden");
 
 
         response.sendRedirect("/login");
