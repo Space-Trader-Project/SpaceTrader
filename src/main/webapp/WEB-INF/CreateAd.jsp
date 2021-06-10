@@ -29,14 +29,17 @@
         <div class="card-body">
             <h5 class="card-title">List a Product</h5>
 
+
+
             <form method="post" action="/CreateAd">
+
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control" id="title" placeholder="Space X Falcon" name="title">
                 </div>
                 <div class="form-group">
-                    <label for="itemPrice">Price</label>
-                    <input type="text" class="form-control" id="itemPrice" placeholder="2,300,000" name="itemPrice">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="2,300,000" name="price">
                 </div>
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
@@ -47,9 +50,11 @@
                     <textarea class="form-control" id="Description" rows="3" name="Description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">Example file input</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <label for="picture">Upload a Photo</label>
+                    <label type="hidden" name="user_id" value="${sessionScope.user.id}"></label>
+                    <input type="file" class="form-control-file" id="picture">
                 </div>
+                <p></p>
                 <button type="submit" class="btn btn-primary">Post Product</button>
 
             </form>
