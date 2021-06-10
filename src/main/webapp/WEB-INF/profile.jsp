@@ -5,16 +5,26 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+
+    <%--  GOOGLE FONTS  --%>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <%-- CSS --%>
+    <link rel="stylesheet" href="../styles/register-page.css">
+
+
+
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.firstName}!</h1>
-        <h6>Username: ${sessionScope.user.username}</h6>
-        <h6>Email: ${sessionScope.user.email}</h6>
+        <h1 class="header">Welcome, ${sessionScope.user.firstName}!</h1>
+        <h6 class="inputs">Username: ${sessionScope.user.username}</h6>
+        <h6 class="inputs">Email: ${sessionScope.user.email}</h6>
         <a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
-        <h2>Your published ads:</h2>
+        <h2 class="header">Your published ads:</h2>
         <div class="d-flex mx-2 my-1 w-100 p-0">
 <c:forEach var="ad" items="${ads}">
 
@@ -23,7 +33,7 @@
         <div class="card" style="width: 18rem;">
             <img src="${ad.picture}" class="card-img-top" height="200" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${ad.title}</h5>
+                <h5 class="card-title header" style="color:black">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
                 <div class="d-flex justify-content-center">
                     <a href="/ad/edit" class="btn btn-primary mx-1">Edit Ad</a>

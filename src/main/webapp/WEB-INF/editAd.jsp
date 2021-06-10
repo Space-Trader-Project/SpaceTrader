@@ -9,9 +9,18 @@
 <html>
 <head>
     <title>Edit An Ad</title>
+
+    <%--  GOOGLE FONTS  --%>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <%-- CSS --%>
+    <link rel="stylesheet" href="../styles/register-page.css">
+
+
 </head>
 <body>
-<h1>Edit An Ad</h1>
+<h1 class="header">Edit An Ad</h1>
 <form action="/Ads/editAd" method="post">
     <label for="title">Title</label>
     <input name="title" id="title" type="text">

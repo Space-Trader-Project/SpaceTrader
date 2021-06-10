@@ -18,7 +18,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="text-center header mt-5">
-    <h1>Welcome to SpaceTrader where you List and buy Space Parts!</h1>
+    <h1>Welcome to SpaceTrader where you List your Space Parts!</h1>
 </div>
 <!-- Flickity HTML init -->
 <div class="gallery js-flickity">
