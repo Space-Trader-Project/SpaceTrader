@@ -5,17 +5,13 @@
     <%--    <jsp:include page="/WEB-INF/partials/head.jsp">--%>
     <%--        <jsp:param name="title" value="Welcome to my site!"/>--%>
     <%--    </jsp:include>--%>
-
         <%-- BOOTSTRAP  --%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
         <%--  GOOGLE FONTS  --%>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
-
     <%--  CAROUSEL CDN  --%>
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
         <%-- PERSONAL CSS --%>
         <link rel="stylesheet" href="../styles/landing-page.css">
 </head>
@@ -36,11 +32,7 @@
         </div>
     </c:forEach>
 </div>
-
-
-
 <%-- CAROUSEL SCRIPT--%>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
 </body>
 </html>

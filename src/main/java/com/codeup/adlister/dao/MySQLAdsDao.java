@@ -52,11 +52,11 @@ public class MySQLAdsDao implements Ads {
     @Override
     public List<Ad> title(String search) {
         PreparedStatement stmt = null; //stmt = statement
-        String searchFilter = "%" + search + "%"; //be able to pass string into LIKE query. By setting this to equal the POST method in the jsp's search bar, we should be able to get the search filter to work properly
+        String searchTitle = "%" + search + "%"; //be able to pass string into LIKE query. By setting this to equal the POST method in the jsp's search bar, we should be able to get the search filter to work properly
         //^^ the "2" here is just to test if the string is being successfully called on by stmt. If it works, you should only see "test2" appear in the ad list (or product) page
         try {
             stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ?"); //get adds where title includes searchFilter
-            stmt.setString(1, searchFilter);
+            stmt.setString(1, searchTitle);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {
@@ -74,6 +74,38 @@ public class MySQLAdsDao implements Ads {
             stmt.setString(1, searchFilter);
             stmt.setDouble(2, min);
             stmt.setDouble(3, max);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e){
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
+    public List<Ad> category(String search, String category){
+        PreparedStatement stmt = null;
+        String searchTitle = "%" + search + "%";
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
+            stmt.setString(1, searchTitle);
+            stmt.setString(2, category);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e){
+            throw new RuntimeException("Error retrieving all ads by category.", e);
+        }
+    }
+
+    @Override
+    public List<Ad> filterAll(String search, String category, double min, double max){
+        PreparedStatement stmt = null;
+        String searchTitle = "%" + search + "%";
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?) AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
+            stmt.setString(1, searchTitle);
+            stmt.setDouble(2, min);
+            stmt.setDouble(3, max);
+            stmt.setString(4, category);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e){
@@ -109,6 +141,26 @@ public class MySQLAdsDao implements Ads {
     @Override
     public void update(Ad ad) {
 
+    }
+
+    @Override
+    public void update(String title, String description, double price, int quantity, String picture ) {
+       try {
+            String insertQuery = "UPDATE spacetrader_db.ads SET(user_id, title, description, price, picture, quantity)) VALUES (?, ?, ?,  ?, ?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setLong(1, ad.getUserId());
+            stmt.setString(2, ad.getTitle());
+            stmt.setString(3, ad.getDescription());
+            stmt.setDouble(4, ad.getPrice());
+            stmt.setString(5, ad.getPicture());
+            stmt.setInt(6, ad.getQuantity());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new ad.", e);
+        }
     }
 
     @Override

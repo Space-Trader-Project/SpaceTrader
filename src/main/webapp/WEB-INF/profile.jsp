@@ -10,7 +10,10 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <h1>Welcome, ${sessionScope.user.firstName}!</h1>
+        <h6>Username: ${sessionScope.user.username}</h6>
+        <h6>Email: ${sessionScope.user.email}</h6>
+        <a href="/profile/edit" class="btn btn-primary">Edit Profile</a>
         <h2>Your published ads:</h2>
         <div class="d-flex mx-2 my-1 w-100 p-0">
 <c:forEach var="ad" items="${ads}">
@@ -23,7 +26,8 @@
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="/ad/edit" class="btn btn-primary">Edit Ad</a>
+                    <a href="/ad/edit" class="btn btn-primary mx-1">Edit Ad</a>
+                    <a href="/ad/delete" class="btn btn-primary mx-1">Delete Ad</a>
                 </div>
 
             </div>

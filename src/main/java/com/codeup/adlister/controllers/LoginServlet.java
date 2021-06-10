@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             request.getSession().setAttribute("username", username);
             request.getSession().setAttribute("hidden", hidden);
-
             response.sendRedirect("/profile");
         } else {
 
