@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Login" />
-    </jsp:include>
+    <jsp:include page="/WEB-INF/partials/head.jsp"/>
+<%--        <jsp:param name="title" value="Login" />--%>
+<%--    </jsp:include>--%>
 
     <%--  GOOGLE FONTS  --%>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
     <div class="container">
         <h1 class="inputs header">You are going to Space!!!</h1>
         <form action="/login" method="POST">

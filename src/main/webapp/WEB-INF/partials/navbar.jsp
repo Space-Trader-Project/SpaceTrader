@@ -9,8 +9,10 @@
 
                 <form class="form-inline my-lg-0">
                     <input class="form-control mr-sm-2" type="search" action="/ads" name="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-warning my-sm-0" type="submit">Search</button>
                 </form>
+        </ul>
+        <ul class="navbar-nav margin">
 <%--            <li class="nav-item">--%>
 <%--                <a class="nav-link" href="/PostingProduct"><button class="btn btn-outline-warning" type="submit">Sell Your Goods</button></a>--%>
 <%--            </li>--%>
