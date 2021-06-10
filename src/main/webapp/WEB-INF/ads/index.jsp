@@ -24,6 +24,15 @@
     <%--        var submitButton = $("#submit");--%>
     <%--    </script>--%>
 
+    <%--  GOOGLE FONTS  --%>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <%-- CSS --%>
+    <link rel="stylesheet" href="../styles/register-page.css">
+
+
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
@@ -33,21 +42,24 @@
 <%--    <input id="submit" type="submit">--%>
 <%--</form>--%>
 
-<h1>Here Are all the ads!</h1>
+
+
+
+<h1 class="header">Here Are all the ads!</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>
-            <h2><a href="/ads/info?id=${ad.id}">${ad.title}</a></h2>
-            <h3>$${ad.price}</h3>
-            <p>${ad.description}</p>
+            <h2 class="header"><a class="inputs" href="/ads/info?id=${ad.id}">${ad.title}</a></h2>
+            <h3 style="color:yellow">$${ad.price}</h3>
+            <p class="inputs">${ad.description}</p>
 
 <%--                    <a href="/ads/edit?id=${ad.id}">Edit</a>--%>
 <%--                    <a href="/ads/delete?id=${ad.id}">Delete</a>--%>
                 <%--            <p>${ad.quantity}</p>--%>
                 <%--            <p>${ad.category}</p>--%>
 
-            <p>In Stock: ${ad.quantity}</p>
+            <p style="color: yellow">In Stock: ${ad.quantity}</p>
                 <%--                            <p>${ad.categories}</p>--%>
 
         </div>

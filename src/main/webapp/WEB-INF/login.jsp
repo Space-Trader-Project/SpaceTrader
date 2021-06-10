@@ -19,14 +19,14 @@
         <h1 class="inputs header">You are going to Space!!!</h1>
         <form action="/login" method="POST">
             <div class="form-group">
-                <label class="inputs" for="username">Username</label>
+                <label class="inputs" for="username">Username:</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
             <div class="form-group">
-                <label class="inputs" for="password">Password</label>
+                <label class="inputs" for="password">Password:</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Log In">
+            <input type="submit" class="btn btn-primary btn-block mt-3" value="Log In">
         </form>
     </div>
 </body>
