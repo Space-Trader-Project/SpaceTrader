@@ -10,15 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/ad/delete")
+@WebServlet(urlPatterns = "/ads/delete")
 public class DeleteServlet extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        long ID = Long.parseLong(request.getParameter("delete"));
+        long ID = Long.parseLong(request.getParameter("id"));
         DaoFactory.getCategoriesDao().deleteEntry(ID);
         DaoFactory.getAdsDao().deleteEntry(ID);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }

@@ -26,8 +26,14 @@
                 <h5 class="card-title">${ad.title}</h5>
                 <p class="card-text">${ad.description}</p>
                 <div class="d-flex justify-content-center">
-                    <a href="/ad/edit" class="btn btn-primary mx-1">Edit Ad</a>
-                    <a href="/ad/delete" class="btn btn-primary mx-1">Delete Ad</a>
+                    <form action="/ads/edit" method="GET">
+                        <input type="hidden" name="id" value="${ad.id}">
+                        <button class="btn btn-primary mx-1">Edit Ad</button>
+                    </form>
+                    <form action="/ads/delete" method="GET">
+                        <input type="hidden" name="id" value="${ad.id}">
+                        <button class="btn btn-primary mx-1">Delete Ad</button>
+                    </form>
                 </div>
 
             </div>
