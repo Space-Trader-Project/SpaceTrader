@@ -288,6 +288,7 @@ public class MySQLAdsDao implements Ads {
                 ads.add(extractAd(rs));
             }
             return ads;
-        }
-    }
+        }}
+
+
 
