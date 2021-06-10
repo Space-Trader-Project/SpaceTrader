@@ -29,6 +29,5 @@ public interface Ads {
     void editEntry (Long ID);
     List<Ad> selectedAd (Long ID);
 
-    void update(String title, String description, double price, int quantity, String picture);
-
+    Ad findById(long ID);
 }

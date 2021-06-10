@@ -16,7 +16,10 @@ import java.util.List;
 public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getSession().getAttribute("adEdit");
+
+        long ID = Long.parseLong(request.getParameter("edit"));
+        Ad newAD = DaoFactory.getAdsDao().findById(ID);
+        request.setAttribute("EditAll", newAD);
         request.getRequestDispatcher("/WEB-INF/editAd.jsp").forward(request, response);
 
     }
@@ -29,9 +32,13 @@ public class EditServlet extends HttpServlet {
         double price = Double.parseDouble(request.getParameter("price"));
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         String picture = request.getParameter("picture");
-
-////        Ad newAD = (Ad) request.getSession().getAttribute("adEdit");
-//
+        long ID = Long.parseLong(request.getParameter("edit"));
+        Ad newAD = DaoFactory.getAdsDao().findById(ID);
+        newAD.setTitle(title);
+        newAD.setDescription(description);
+        newAD.setPrice(price);
+        newAD.setQuantity(quantity);
+        newAD.setPicture(picture);
 //        if (!request.getParameter("title").isEmpty()) {
 ////            newAD.setTitle(request.getParameter("title"));
 //        }
@@ -42,7 +49,8 @@ public class EditServlet extends HttpServlet {
 ////            newAD.setCategory(request.getParameter("category"));
 //        }
 //
-            DaoFactory.getAdsDao().update( title, description, price, quantity, picture);
+            DaoFactory.getAdsDao().update(newAD);
+        response.sendRedirect("/ads");
 
         }
 }
