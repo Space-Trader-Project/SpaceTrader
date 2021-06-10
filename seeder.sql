@@ -43,9 +43,3 @@ VALUES (1, 'Spaceship'),
        (14, 'Armor'),
        (15, 'Helmet');
 
-INSERT INTO user_type(user_id, user_type)
-VALUES (1, 'admin'),
-       (2, 'admin'),
-       (3, 'admin'),
-       (4, 'user'),
-       (5, 'user');
