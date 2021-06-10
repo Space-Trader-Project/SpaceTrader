@@ -50,14 +50,46 @@ public class MySQLAdsDao implements Ads {
 
         }
     }
-    @Override
-    public void editEntry(Long ID) {
+//    @Override
+//
+//    public void editEntry(Long ID) {
+//
+//    }
 
+//    @Override
+//    public List<Ad> selectedAd(Long ID) {
+//        return null;
+
+    public List<Ad> category(String search, String category){
+        PreparedStatement stmt = null;
+        String searchTitle = "%" + search + "%";
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
+            stmt.setString(1, searchTitle);
+            stmt.setString(2, category);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e){
+            throw new RuntimeException("Error retrieving all ads by category.", e);
+        }
     }
 
     @Override
-    public List<Ad> selectedAd(Long ID) {
-        return null;
+    public List<Ad> filterAll(String search, String category, double min, double max){
+        PreparedStatement stmt = null;
+        String searchTitle = "%" + search + "%";
+        try{
+            stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?) AND id IN(SELECT ad_id FROM spacetrader_db.categories WHERE categories = ?)");
+            stmt.setString(1, searchTitle);
+            stmt.setDouble(2, min);
+            stmt.setDouble(3, max);
+            stmt.setString(4, category);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e){
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+
     }
 
     @Override
@@ -78,6 +110,7 @@ public class MySQLAdsDao implements Ads {
                         rs.getInt("quantity")
                 );
             }
+
 
             return null;
         } catch (SQLException e) {
@@ -128,37 +161,37 @@ public class MySQLAdsDao implements Ads {
             }
         }
 
-        @Override
-        public List<Ad> category (String search, String category){
-            PreparedStatement stmt = null;
-            String searchTitle = "%" + search + "%";
-            try {
-                stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
-                stmt.setString(1, searchTitle);
-                stmt.setString(2, category);
-                ResultSet rs = stmt.executeQuery();
-                return createAdsFromResults(rs);
-            } catch (SQLException e) {
-                throw new RuntimeException("Error retrieving all ads.", e);
-            }
-        }
+//        @Override
+//        public List<Ad> category (String search, String category){
+//            PreparedStatement stmt = null;
+//            String searchTitle = "%" + search + "%";
+//            try {
+//                stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
+//                stmt.setString(1, searchTitle);
+//                stmt.setString(2, category);
+//                ResultSet rs = stmt.executeQuery();
+//                return createAdsFromResults(rs);
+//            } catch (SQLException e) {
+//                throw new RuntimeException("Error retrieving all ads.", e);
+//            }
+//        }
 
-        @Override
-        public List<Ad> filterAll (String search, String category,double min, double max){
-            PreparedStatement stmt = null;
-            String searchTitle = "%" + search + "%";
-            try {
-                stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?) AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
-                stmt.setString(1, searchTitle);
-                stmt.setDouble(2, min);
-                stmt.setDouble(3, max);
-                stmt.setString(4, category);
-                ResultSet rs = stmt.executeQuery();
-                return createAdsFromResults(rs);
-            } catch (SQLException e) {
-                throw new RuntimeException("Error retrieving all ads.", e);
-            }
-        }
+//        @Override
+//        public List<Ad> filterAll (String search, String category,double min, double max){
+//            PreparedStatement stmt = null;
+//            String searchTitle = "%" + search + "%";
+//            try {
+//                stmt = connection.prepareStatement("SELECT * FROM spacetrader_db.ads WHERE title LIKE ? AND (price BETWEEN ? AND ?) AND id IN(SELECT ads_id FROM spacetrader_db.categories WHERE category = ?)");
+//                stmt.setString(1, searchTitle);
+//                stmt.setDouble(2, min);
+//                stmt.setDouble(3, max);
+//                stmt.setString(4, category);
+//                ResultSet rs = stmt.executeQuery();
+//                return createAdsFromResults(rs);
+//            } catch (SQLException e) {
+//                throw new RuntimeException("Error retrieving all ads.", e);
+//            }
+//        }
 
         @Override
         public Long insert(Ad ad){
@@ -180,10 +213,10 @@ public class MySQLAdsDao implements Ads {
             }
         }
 
-        @Override
-        public Ad selectedAd ( long id){
-            return null;
-        }
+//        @Override
+//        public Ad selectedAd ( long id){
+//            return null;
+//        }
 
         @Override
         public void update(Ad ad){
@@ -224,3 +257,4 @@ public class MySQLAdsDao implements Ads {
             return ads;
         }
     }
+

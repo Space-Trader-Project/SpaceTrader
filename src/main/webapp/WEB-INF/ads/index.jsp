@@ -36,19 +36,20 @@
 <h1>Here Are all the ads!</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
-        <div <%--class="col-md-6"--%>>
-
-                <%--            TODO: *crop* the images so they are all rouphly the same height--%>
-                <%--            TODO: function that takes prices and formats them with commas(depending on how long) and 2 decimal spaces--%>
-
+        <div class="col-md-6">
             <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>
-            <h2>${ad.title}</h2>
+            <h2><a href="/ads/info">${ad.title}</a></h2>
             <h3>$${ad.price}</h3>
             <p>${ad.description}</p>
+
                     <a href="/Ads/editAd?edit=${ad.id}">Edit</a>
                     <a href="/deleteAd?delete=${ad.id}">Delete</a>
                 <%--            <p>${ad.quantity}</p>--%>
                 <%--            <p>${ad.category}</p>--%>
+
+            <p>In Stock: ${ad.quantity}</p>
+                <%--                            <p>${ad.categories}</p>--%>
+
         </div>
     </c:forEach>
 </div>
