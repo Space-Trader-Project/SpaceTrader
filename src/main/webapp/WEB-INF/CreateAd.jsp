@@ -11,6 +11,14 @@
     <title>Post an Item</title>
     <jsp:include page="/WEB-INF/partials/head.jsp" />
 
+
+    <%--  GOOGLE FONTS  --%>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <%-- CSS --%>
+    <link rel="stylesheet" href="../styles/register-page.css">
+
         <%--    stylesheet--%>
     <link rel="stylesheet" href="/styles/stylesheet.css">
 </head>
@@ -22,16 +30,16 @@
 
 
 
-<div class="postingBody">
+<div  class="postingBody">
     <div class="card" style="width: 18rem;">
 
 <%--        <img class="card-img-top" src="${pageContext.request.contextPath}/img/rocket.png" alt="Card image cap">--%>
         <div class="card-body">
-            <h5 class="card-title">List a Product</h5>
+            <h5 class="card-title header" style="color:black">List a Product</h5>
 
 
 
-            <form method="post" action="/CreateAd">
+            <form  method="post" action="/CreateAd">
 
                 <div class="form-group">
                     <label for="title">Title</label>
