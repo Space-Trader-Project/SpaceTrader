@@ -2,11 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads"/>
-    </jsp:include>
+<%--    <jsp:include page="/WEB-INF/partials/head.jsp">--%>
+<%--        <jsp:param name="title" value="Viewing All The Ads"/>--%>
+<%--    </jsp:include>--%>
 
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <%--    Bootstrap--%>
 
     <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -45,7 +46,7 @@
 
 
 
-<h1 class="header">Here Are all the ads!</h1>
+<h1 class="header">Our Current Offerings</h1>
 <div class="container">
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">

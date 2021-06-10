@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <jsp:include page="partials/head.jsp">
-    <jsp:param name="title" value="Register For Our Site!" />
-  </jsp:include>
-
+<%--  <jsp:include page="partials/head.jsp">--%>
+<%--    <jsp:param name="title" value="Register For Our Site!" />--%>
+<%--  </jsp:include>--%>
+  <%-- BOOTSTRAP  --%>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <%--  GOOGLE FONTS  --%>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
@@ -15,8 +16,8 @@
 <body>
 <jsp:include page="partials/navbar.jsp" />
 <div class="container">
-  <h1 class="header">Update the the fields</h1>
-  <form action="/profile/edit" method="POST">
+  <h1 class="header">Update Your Profile</h1>
+  <form class="side-margins" action="/profile/edit" method="POST">
     <div class="form-group">
       <label class="inputs" for="First_Name">First Name</label>
       <input id="First_Name" name="First_Name" class="form-control" type="text">
@@ -42,11 +43,11 @@
       <input id="new_password" name="new_password" class="form-control" type="password">
     </div>
     <div class="form-group">
-      <label class="inputs" for="confirm_password">Confirm Password</label>
+      <label class="inputs" for="confirm_password">Confirm New Password</label>
       <input id="confirm_password" name="confirm_password" class="form-control" type="password">
     </div>
-
-    <input type="submit" class="btn btn-primary btn-block">
+    <button type="submit" class="btn btn-outline-warning mt-3" >Update</button>
+<%--    <input type="submit" class="btn btn-primary btn-block">--%>
   </form>
 </div>
 </body>

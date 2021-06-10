@@ -11,8 +11,7 @@
                     <input class="form-control mr-sm-2" type="search" action="/ads" name="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-warning my-sm-0" type="submit">Search</button>
                 </form>
-        </ul>
-        <ul class="navbar-nav margin">
+
 <%--            <li class="nav-item">--%>
 <%--                <a class="nav-link" href="/PostingProduct"><button class="btn btn-outline-warning" type="submit">Sell Your Goods</button></a>--%>
 <%--            </li>--%>
@@ -36,7 +35,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/CreateAd"><button class="btn btn-outline-warning" type="submit">Sell Your Goods</button></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="/ads"><button class="btn btn-outline-warning" type="submit">View All Ads</button></a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" ${sessionScope.hidden} href="/register">Sign Up</a>
