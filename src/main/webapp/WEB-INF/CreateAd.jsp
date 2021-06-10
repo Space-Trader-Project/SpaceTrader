@@ -42,19 +42,19 @@
             <form  method="post" action="/CreateAd">
 
                 <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="title">Title:</label>
                     <input type="text" class="form-control" id="title" placeholder="Space X Falcon" name="title">
                 </div>
                 <div class="form-group">
-                    <label for="price">Price</label>
+                    <label for="price">Price:</label>
                     <input type="text" class="form-control" id="price" placeholder="2,300,000" name="price">
                 </div>
                 <div class="form-group">
-                    <label for="quantity">Quantity</label>
+                    <label for="quantity">Quantity:</label>
                     <input type="text" class="form-control" id="quantity" placeholder="quantity" name="quantity">
                 </div>
                 <div class="form-group">
-                    <label for="Description">Description</label>
+                    <label for="Description">Description:</label>
                     <textarea class="form-control" id="Description" rows="3" name="Description"></textarea>
                 </div>
                 <div class="form-group">
