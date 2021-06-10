@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Edit An Ad</h1>
-<form action="/Ads/editAd" method="post">
+<form action="/ads/edit" method="post">
     <label for="title">Title</label>
     <input name="title" id="title" type="text">
     <br />
