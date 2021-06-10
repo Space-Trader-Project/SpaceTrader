@@ -27,7 +27,7 @@
             <img src="${ad.picture}" alt="" class="rounded-circle">
             <h3>${ad.title}</h3>
             <p>${ad.description}</p>
-            <p>${ad.price}</p>
+<%--            <p>${ad.price}</p>--%>
             <p><a class="btn btn-lg btn-primary" href="/ads" role="button">View Ads</a></p>
         </div>
     </c:forEach>

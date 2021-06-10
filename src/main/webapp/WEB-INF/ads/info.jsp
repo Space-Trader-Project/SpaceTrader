@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: kenyonluce
@@ -7,14 +8,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="container">
-    <c:forEach var="ad" items="${ads}">
+
         <div class="col-md-6">
-            <div style="height: 200px; overflow: hidden"><img src="${ad.picture}" width="200"></div>
-            <h2>${ad.title}</h2>
-            <h3>$${ad.price}</h3>
-            <p>${ad.description}</p>
-            <p>In Stock: ${ad.quantity}</p>
+            <div style="height: 200px; overflow: hidden"><img src="${singleAd.picture}" width="200"></div>
+            <h2>${singleAd.title}</h2>
+            <h3>$${singleAd.price}</h3>
+            <p>${singleAd.description}</p>
+            <p>In Stock: ${singleAd.quantity}</p>
                 <%--                            <p>${ad.categories}</p>--%>
         </div>
-    </c:forEach>
+
 </div>
