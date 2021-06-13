@@ -6,7 +6,6 @@ public class Category {
     private String categories;
 
     public Category(long adId, String categories){
-//        this.id = id;
         this.adId = adId;
         this.categories = categories;
     }

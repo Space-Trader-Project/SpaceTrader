@@ -29,22 +29,16 @@ public class SearchAdsServlet extends HttpServlet {
             request.setAttribute("ads", DaoFactory.getAdsDao().filterAll(searchKey, category, min, max));
         } else if (category != null) {
             request.setAttribute("ads", DaoFactory.getAdsDao().category(searchKey, category));
-//            response.getWriter().println("category = " + category);
         } else if (minPrice != null & maxPrice != null) {
             double min = Integer.parseInt(request.getParameter("minPrice"));
             double max = Integer.parseInt(request.getParameter("maxPrice"));
             request.setAttribute("ads", DaoFactory.getAdsDao().budget(searchKey, min, max));
-//            response.getWriter().println("budget = " + minPrice + maxPrice);
         } else {
             request.getSession().setAttribute("search", searchValue);
             request.setAttribute("ads", DaoFactory.getAdsDao().title(searchValue));
-//            response.getWriter().println("search = " + searchValue);
         }
 
         request.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(request, response);
-        //response.getWriter().println(searchValue);
-        //boolean isPost = "GET".equals(request.getMethod());  //returns false if post is working
-        //response.getWriter().println(isPost);
     }
 }
 

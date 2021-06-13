@@ -228,11 +228,6 @@ public class MySQLAdsDao implements Ads {
             }
         }
 
-//        @Override
-//        public Ad selectedAd ( long id){
-//            return null;
-//        }
-
         @Override
         public void update(Ad ad){
             try {

@@ -20,7 +20,6 @@ public class Ad {
         this.title = title;
         this.description = description;
         this.price = price;
-//        this.category = category;
         this.picture = picture;
         this.quantity = quantity;
     }
@@ -30,7 +29,6 @@ public class Ad {
         this.title = title;
         this.description = description;
         this.price = price;
-//        this.category = category;
         this.picture = picture;
         this.quantity = quantity;
     }
@@ -88,10 +86,6 @@ public class Ad {
         this.description = description;
     }
 
-//    private double price;
-//      private String category;
-//    private String picture;
-//    private int quantity;
 
     public void setPrice(double price){
         this.price = price;
