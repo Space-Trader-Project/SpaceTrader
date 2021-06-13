@@ -38,16 +38,7 @@ public class EditServlet extends HttpServlet {
         newAD.setPrice(price);
         newAD.setQuantity(quantity);
         newAD.setPicture(picture);
-//        if (!request.getParameter("title").isEmpty()) {
-////            newAD.setTitle(request.getParameter("title"));
-//        }
-//        if (!request.getParameter("description").isEmpty()) {
-////            newAD.setDescription(request.getParameter("description"));
-//        }
-//        if (!request.getParameter("category").isEmpty()) {
-////            newAD.setCategory(request.getParameter("category"));
-//        }
-//
+
             DaoFactory.getAdsDao().update(newAD);
         response.sendRedirect("/profile");
 

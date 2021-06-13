@@ -19,8 +19,5 @@ public class AdsIndexServlet extends HttpServlet {
 
 
 
-//        response.getWriter().println(searchValue);
-//        boolean isPost = "GET".equals(request.getMethod());
-//        response.getWriter().println(isPost);
     }
 
